@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #060010;
+  width: 100%;
+  /* font-family: "pricedown"; */
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimize animations for performance */
+.animate-optimized {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #EC6EAD, #3494E6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #d65a9a, #2a7bc8);
+}
+
+/* Selection styling */
+::selection {
+  background: rgba(236, 110, 173, 0.3);
+  color: white;
+}
+
+::-moz-selection {
+  background: rgba(236, 110, 173, 0.3);
+  color: white;
+}
+
+/* Deepesh Sharma Button Animation */
+.deepesh-button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #3498db;
+  z-index: -1;
+  transition: 0.8s;
+  top: 0;
+  border-radius: 0 0 50% 50%;
+  height: 180%;
+}
+
+.deepesh-button:hover::before {
+  height: 0%;
+}
+
+@font-face{
+  /* font-family: "pricedown"; */
+  /* src: url("./pricedown.otf"); */
+}
